@@ -1,0 +1,27 @@
+# Credentials - NEVER commit these
+emailcred.py
+passcred.py
+
+# Compiled Python
+*.pyc
+*.pyo
+__pycache__/
+
+# CSV user data
+users_data.csv
+
+# Windows system files
+desktop.ini
+Thumbs.db
+
+# Python virtual environments
+venv/
+.env/
+env/
+
+# OS files
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/

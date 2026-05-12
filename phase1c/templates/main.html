@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+	<head>
+		<title>Control RPi Web Server</title>
+		<link rel="stylesheet" href="/static/style.css" type="text/css">
+	</head>
+
+	<body>
+		<h1>RPi Web Server</h1>
+		{% for pin in pins %}
+			<h2>{{ pins[pin].description }}
+			{% if pins[pin].state == True %}
+				is currently <strong>on</strong></h2><div class="row"><div class="col-md-2">
+				<a href="/{{pin}}/off" class="btn btn-block btn-lg btn-default" role="button">Turn off</a></div></div>
+			{% else %}
+				is currently <strong>off</strong></h2><div class="row"><div class="col-md-2">
+				<a href="/{{pin}}/on" class="btn btn-block btn-lg btn-primary" role="button">Turn on</a></div></div>
+			{% endif %}
+		{% endfor %}
+		<br>
+		{% if session['username'] == 'roger' %}
+			<a href="/admindashboard" class = "btn">Return to Admin Dashboard</a>
+		{% endif %}
+		<br>
+		
+		<div class="row">
+			<p class = "logout"> Don't forget to logout :) </p>
+			<div class ="col-md-2" id = "btn" ><a href="/logout">Logout</a></div>
+		</div>
+	</body>
+</html>
+

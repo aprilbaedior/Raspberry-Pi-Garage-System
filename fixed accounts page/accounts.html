@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Accounts</title>
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
+</head>
+
+<body>
+    <h2>User Accounts</h2>
+
+    {% if users%}
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Email<th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.Username }}</td>
+            <td>{{ user.Password }}</td>
+            <td>{{ user.Email }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    
+    <div class="returnbutton">
+			<a href="/admindashboard">Return to admin dashboard</a>
+    </div>
+</body>
+</html>

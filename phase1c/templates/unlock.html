@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unlock Account</title>
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
+</head>
+
+<body>
+    <h2>Unlock Your Account</h2>
+
+    {% with messages = get_flashed_messages() %}
+      {% for message in messages %}
+        <p>{{ message }}</p>
+      {% endfor %}
+    {% endwith %}
+    
+    <form action = "/unlock" method="POST">
+        <label for="code">Enter Unlock Code:</label>
+        <input type="text" name="code" required>
+        <input type="submit" value="Unlock">
+    </form>
+</body>
+</html>
